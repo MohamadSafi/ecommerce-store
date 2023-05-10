@@ -1,4 +1,4 @@
-import { List } from "@/components/ui/course";
+import { CourseCard, List } from "@/components/ui/course";
 import { BaseLayout } from "@/components/ui/common/layout";
 import { getAllCourses } from "@/content/courses/fetcher";
 import WalletBar from "@/components/ui/web3/walletbar";
@@ -9,7 +9,9 @@ export default function Marketplace({ courses }) {
     <BaseLayout>
       <WalletBar />
       <EthRates />
-      <List courses={courses} />
+      <List courses={courses}>
+        {(course) => <CourseCard course={course} key={course.id} />}
+      </List>
     </BaseLayout>
   );
 }
