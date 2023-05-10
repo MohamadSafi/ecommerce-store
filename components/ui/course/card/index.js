@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Card({ course }) {
+export default function CourseCard({ course }) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
       <div className="flex h-full w-auto">
