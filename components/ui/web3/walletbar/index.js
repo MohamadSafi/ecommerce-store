@@ -25,7 +25,7 @@ export default function WalletBar() {
               </div>
             </div>
             <div>
-              {!network.isSupported && (
+              {network.hasFinishedFirstFetch && !network.isSupported && (
                 <div className="bg-red-500 p-3 rounded-lg">
                   <div> Connected to the wrong Network</div>
                   <div>
