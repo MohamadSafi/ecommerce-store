@@ -1,4 +1,8 @@
+import { useNetwork } from "@/components/web3/hooks/useNetwork";
+
 export default function WalletBar() {
+  const { network } = useNetwork();
+
   return (
     <div className=" pt-11">
       <section className="text-white bg-indigo-800 rounded-md">
@@ -21,7 +25,7 @@ export default function WalletBar() {
             <div>
               <div>
                 <span>Currently on </span>
-                <strong className="text-2xl">Ethereum Main Network</strong>
+                <strong className="text-2xl">{network.data}</strong>
               </div>
             </div>
           </div>
