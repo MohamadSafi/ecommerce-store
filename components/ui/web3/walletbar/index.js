@@ -2,6 +2,8 @@ import { useNetwork } from "@/components/web3/hooks/useNetwork";
 
 export default function WalletBar() {
   const { network } = useNetwork();
+  const { targetNetwork } = network.data;
+  const { isSupported } = network.isSupported;
 
   return (
     <div className=" pt-11">
@@ -23,10 +25,20 @@ export default function WalletBar() {
               </div>
             </div>
             <div>
-              <div>
-                <span>Currently on </span>
-                <strong className="text-2xl">{network.data}</strong>
-              </div>
+              {!network.isSupported && (
+                <div className="bg-red-500 p-3 rounded-lg">
+                  <div> Connected to the wrong Network</div>
+                  <div>
+                    Connect to: <strong>{network.target}</strong>
+                  </div>
+                </div>
+              )}
+              {network.data && (
+                <div className=" pt-4">
+                  <span>Currently on </span>
+                  <strong className="text-2xl">{network.data}</strong>
+                </div>
+              )}
             </div>
           </div>
         </div>
