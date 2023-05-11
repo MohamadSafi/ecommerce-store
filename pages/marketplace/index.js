@@ -5,8 +5,10 @@ import WalletBar from "@/components/ui/web3/walletbar";
 import EthRates from "@/components/ui/web3/ethRates";
 import { Button } from "@/components/ui/common";
 import { OrderModal } from "@/components/ui/order";
+import { useState } from "react";
 
 export default function Marketplace({ courses }) {
+  const [selectedCourse, setSelectedCourse] = useState(null);
   return (
     <BaseLayout>
       <WalletBar />
@@ -18,13 +20,23 @@ export default function Marketplace({ courses }) {
             key={course.id}
             Footer={() => (
               <div className="mt-3 flex justify-end mr-3">
-                <Button variant="lightPurple">Purchase</Button>
+                <Button
+                  variant="lightPurple"
+                  onClick={() => setSelectedCourse(course)}
+                >
+                  Purchase
+                </Button>
               </div>
             )}
           />
         )}
       </List>
-      <OrderModal />
+      {selectedCourse && (
+        <OrderModal
+          course={selectedCourse}
+          onClose={() => setSelectedCourse(null)}
+        />
+      )}{" "}
     </BaseLayout>
   );
 }

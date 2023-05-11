@@ -1,8 +1,22 @@
 import { Modal, Button } from "@/components/ui/common";
+import { useEffect, useState } from "react";
 
-export default function OrderModal() {
+export default function OrderModal({ course, onClose }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!!course) {
+      setIsOpen(true);
+    }
+  }, [course]);
+
+  const closeModal = () => {
+    setIsOpen(false);
+    onClose();
+  };
+
   return (
-    <Modal isOpen={true}>
+    <Modal isOpen={isOpen}>
       <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
         <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div className="sm:flex sm:items-start">
@@ -11,7 +25,7 @@ export default function OrderModal() {
                 className="mb-7 text-lg font-bold leading-6 text-gray-900"
                 id="modal-title"
               >
-                Course Title
+                {course.title}
               </h3>
               <div className="mt-1 relative rounded-md">
                 <div className="mb-1">
@@ -81,7 +95,9 @@ export default function OrderModal() {
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex">
           <Button>Submit</Button>
-          <Button variant="red">Cancel</Button>
+          <Button onClick={closeModal} variant="red">
+            Cancel
+          </Button>
         </div>
       </div>
     </Modal>
