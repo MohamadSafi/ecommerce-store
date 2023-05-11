@@ -3,7 +3,8 @@ import { BaseLayout } from "@/components/ui/common/layout";
 import { getAllCourses } from "@/content/courses/fetcher";
 import WalletBar from "@/components/ui/web3/walletbar";
 import EthRates from "@/components/ui/web3/ethRates";
-import { Button, Modal } from "@/components/ui/common";
+import { Button } from "@/components/ui/common";
+import { OrderModal } from "@/components/ui/order";
 
 export default function Marketplace({ courses }) {
   return (
@@ -23,7 +24,7 @@ export default function Marketplace({ courses }) {
           />
         )}
       </List>
-      <Modal isOpen={false} />
+      <OrderModal />
     </BaseLayout>
   );
 }
