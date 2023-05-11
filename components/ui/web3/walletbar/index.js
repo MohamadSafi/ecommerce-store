@@ -1,4 +1,4 @@
-import { useNetwork } from "@/components/web3/hooks/useNetwork";
+import { useNetwork } from "@/components/web3/hooks";
 
 export default function WalletBar() {
   const { network } = useNetwork();
