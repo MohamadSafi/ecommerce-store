@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useAccount } from "@/components/web3/hooks";
 
 export default function Navbar() {
-  const { connect, isLoading, isWeb3Loaded, hooks } = useWeb3();
+  const { connect, isLoading, web3 } = useWeb3();
   const { account } = useAccount();
   return (
     <nav className="bg-white border-gray-200 dark:bg-indigo-800">
@@ -81,7 +81,7 @@ export default function Navbar() {
                 >
                   Loading...
                 </button>
-              ) : isWeb3Loaded ? (
+              ) : web3 != null ? (
                 account.data ? (
                   <div>
                     <a className="pl-5 py-1 border rounded-lg border-indigo-800 tect-base font-medium text-[#5bff3a]  bg-indigo-800 hover:bg-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed">
