@@ -1,7 +1,12 @@
+import { useAccount, useNetwork } from "@/components/web3/hooks";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function CourseCard({ course, Footer }) {
+  const { network } = useNetwork();
+  const { account } = useAccount();
+  const canPurchaseCourse = !!(account.data && network.isSupported);
+
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
       <div className="flex h-full w-full">
@@ -26,7 +31,7 @@ export default function CourseCard({ course, Footer }) {
           <p className="mt-2 text-gray-500">
             {course.description.substring(0, 70)}...
           </p>
-          {Footer && <Footer />}
+          {Footer && <Footer canPurchaseCourse={canPurchaseCourse} />}
         </div>
       </div>
     </div>

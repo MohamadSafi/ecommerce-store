@@ -9,12 +9,7 @@ export default function EthRates() {
         <div className="p-10 border drop-shadow rounded-md bg-indigo-800">
           <div className="flex items-center">
             <p className=" text-gray-100 text-2xl">1</p>
-            <Image
-              layout="fixed"
-              height="35"
-              width="35"
-              src="/small-eth.webp"
-            />
+            <Image height="35" width="35" src="/small-eth.webp" />
             <span className="text-2xl text-white font-bold">= {eth.data}$</span>
           </div>
           <p className="text-xl text-gray-100">Current eth Price</p>
