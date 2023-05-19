@@ -1,5 +1,5 @@
 module.exports = {
-  contract_build_directory: "./public/contracts",
+  contracts_build_directory: "./public/contracts",
 
   networks: {
     development: {
