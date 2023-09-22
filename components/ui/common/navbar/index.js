@@ -9,11 +9,6 @@ export default function Navbar() {
     <nav className="bg-white border-gray-200 dark:bg-indigo-800">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
-          <img
-            src="https://img.icons8.com/ios-filled/50/000000/monzo--v1.png"
-            className="h-8 mr-1"
-            alt="just M"
-          />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Safi
           </span>
