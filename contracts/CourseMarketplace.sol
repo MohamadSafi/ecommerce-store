@@ -1,6 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
+  /// Course has already a Owner!
+  error CourseHasOwner();
+
+  /// Only owner has an access!
+  error OnlyOwner(); 
+
 contract CourseMarketplace {
 
   enum State {
@@ -32,11 +38,7 @@ contract CourseMarketplace {
     setContractOwner(msg.sender);
   }
 
-  /// Course has already a Owner!
-  error CourseHasOwner();
 
-  /// Only owner has an access!
-  error OnlyOwner();
 
   modifier onlyOwner() {
     if (msg.sender != getContractOwner()) {
