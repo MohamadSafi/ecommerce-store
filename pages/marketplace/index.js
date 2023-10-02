@@ -30,6 +30,14 @@ export default function Marketplace({ courses }) {
       { type: "bytes32", value: emailHash },
       { type: "bytes32", value: orderHash.slice(2) }
     );
+
+    try {
+      contract.methods
+        .purchaseCourse(hexCoursesetId, proof)
+        .send({ from: account, value });
+    } catch {
+      console.log("operation faild");
+    }
   };
 
   return (
