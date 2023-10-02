@@ -9,12 +9,19 @@ Welcome to the E-Commerce Store project! This e-commerce platform leverages bloc
 ## :zap: Features
 
 - **Blockchain Payments**: The project uses blockchain technology for handling payments, providing a secure and tamper-proof payment system.
+  
   ![E-Commerce Payment](public/assets/GIF/ECommerceBuy.gif)
+
 - **Local Private Chain**: Ganache is used to deploy the project on a local private Ethereum blockchain just for testing purposes, making development and testing straightforward.
-  ![E-Commerce Ganache](public/assets/GIF/Ganache.gif)
+
+  ![E-Commerce Ganache](public/assets/GIF/ECommerceGanache.gif)
+
 - **MetaMask Integration**: Users can interact with the platform through MetaMask, allowing them to make payments using their Ethereum wallets.
+ 
   ![E-Commerce Metamask](public/assets/GIF/ECommerceMetamask.gif)
+
 - **Responsive Design**: The user interface is built with Tailwind CSS, ensuring a responsive and visually appealing layout.
+
   ![E-Commerce responsive](public/assets/GIF/ECommerceresponsive.gif)
 
 ## Prerequisites
